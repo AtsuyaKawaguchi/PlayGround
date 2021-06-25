@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7610693797355814269}
   - component: {fileID: 1503611490588578360}
   - component: {fileID: 3606485810019917627}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,9 +94,9 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
