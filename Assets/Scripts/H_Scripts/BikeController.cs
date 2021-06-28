@@ -5,36 +5,26 @@ using UnityEngine;
 public class BikeController : MonoBehaviour
 {
     private Rigidbody2D rb2d = default;
-    private SpriteRenderer spRenderer = default;
-    Vector3 initialPosition = default;
+    float randomSpeed = 0;
+    [SerializeField] Vector2 m_speedRange;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        spRenderer = GetComponent<SpriteRenderer>();
-        initialPosition = this.transform.position;
+        randomSpeed = Random.Range(m_speedRange.x, m_speedRange.y);
     }
 
     void Update()
     {
-        float randomSpeed = Random.Range(5F,10F);
-
-        Vector2 velo = new Vector2(h,0).normalized * randomSpeed;
-        velo.y = rb2d.velocity.y;
+        Vector2 velo = new Vector2(randomSpeed,0);
         rb2d.velocity = velo;
+    }
 
-        if (velo.x < 0)
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Finish")
         {
-            spRenderer.flipX = true;
-        }
-        else if (velo.x > 0)
-        {
-            spRenderer.flipX = false;
-        }
-
-        if (this.transform.position.y <= -6f)
-        {
-            this.transform.position = initialPosition;
+            Destroy(this.gameObject);
         }
     }
 }

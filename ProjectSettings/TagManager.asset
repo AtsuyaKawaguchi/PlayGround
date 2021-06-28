@@ -12,6 +12,7 @@ TagManager:
   - Human
   - enemy
   - Ground2
+  - Bike
   layers:
   - Default
   - TransparentFX
