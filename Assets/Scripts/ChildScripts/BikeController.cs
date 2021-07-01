@@ -27,4 +27,17 @@ public class BikeController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            GameObject go = GameObject.Find("H_GameManager");
+            H_GameManager dm = go.GetComponent<H_GameManager>();
+            dm.LoseHp(1);
+            Destroy(this.gameObject);
+        }
+    }
+
+
 }

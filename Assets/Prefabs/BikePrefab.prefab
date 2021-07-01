@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8776110080592447759}
   - component: {fileID: 8776110080592447758}
   - component: {fileID: 8776110080592447754}
-  m_Layer: 0
-  m_Name: BikePrehub
+  m_Layer: 8
+  m_Name: BikePrefab
   m_TagString: Bike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
